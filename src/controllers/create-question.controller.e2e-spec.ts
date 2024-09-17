@@ -14,9 +14,7 @@ describe("Create question (E2E)", () => {
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule]
-    })
-
-      .compile();
+    }).compile();
 
     app = moduleRef.createNestApplication();
 
