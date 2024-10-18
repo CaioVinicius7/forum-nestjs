@@ -9,7 +9,7 @@ import { Slug } from "./value-objects/slug";
 
 export interface QuestionProps {
   authorId: UniqueEntityID;
-  bestAnswerId?: UniqueEntityID;
+  bestAnswerId?: UniqueEntityID | null;
   title: string;
   content: string;
   slug: Slug;
@@ -84,7 +84,7 @@ export class Question extends AggregateRoot<QuestionProps> {
     this.props.attachments = attachments;
   }
 
-  set bestAnswerId(bestAnswerId: UniqueEntityID | undefined) {
+  set bestAnswerId(bestAnswerId: UniqueEntityID | undefined | null) {
     this.props.bestAnswerId = bestAnswerId;
 
     this.touch();
