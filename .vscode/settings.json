@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["dayjs", "Encrypter", "nestjs", "Parens", "unplugin"]
+  "cSpell.words": [
+    "dayjs",
+    "encrypter",
+    "Encrypter",
+    "nestjs",
+    "Parens",
+    "unplugin"
+  ]
 }
