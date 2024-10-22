@@ -3,6 +3,7 @@
     "dayjs",
     "encrypter",
     "Encrypter",
+    "Hasher",
     "nestjs",
     "Parens",
     "unplugin"
