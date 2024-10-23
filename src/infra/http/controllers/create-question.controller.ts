@@ -4,15 +4,13 @@ import {
   Controller,
   HttpCode,
   HttpStatus,
-  Post,
-  UseGuards
+  Post
 } from "@nestjs/common";
 import { z } from "zod";
 
 import { CreateQuestionUseCase } from "@/domain/forum/application/use-cases/create-question";
 import { CurrentUser } from "@/infra/auth/current-user.decorator";
 import type { UserPayload } from "@/infra/auth/jwt.strategy";
-import { JwtAuthGuard } from "@/infra/auth/jwt-auth.guard";
 
 import { ZodValidationPipe } from "../pipes/zod-validation.pipe";
 
@@ -31,7 +29,6 @@ export class CreateQuestionController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  @UseGuards(JwtAuthGuard)
   async handle(
     @Body(bodyValidationPipe) body: CreateQuestionBodySchema,
     @CurrentUser() user: UserPayload
