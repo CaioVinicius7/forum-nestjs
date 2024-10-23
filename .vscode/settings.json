@@ -3,6 +3,7 @@
     "dayjs",
     "encrypter",
     "Encrypter",
+    "hasher",
     "Hasher",
     "nestjs",
     "Parens",
