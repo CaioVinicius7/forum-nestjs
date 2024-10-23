@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   HttpCode,
@@ -38,12 +39,16 @@ export class CreateQuestionController {
     const { title, content } = body;
     const { sub: userId } = user;
 
-    await this.createQUestion.execute({
+    const result = await this.createQUestion.execute({
       title,
       content,
       authorId: userId,
       attachmentsIds: []
     });
+
+    if (result.isLeft()) {
+      throw new BadRequestException();
+    }
   }
 
   private convertToSlug(title: string): string {
