@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "datasource",
     "dayjs",
     "encrypter",
     "Encrypter",
@@ -7,6 +8,8 @@
     "Hasher",
     "nestjs",
     "Parens",
-    "unplugin"
+    "postgresql",
+    "unplugin",
+    "uuid"
   ]
 }
