@@ -11,9 +11,9 @@ import { DatabaseModule } from "@/infra/database/database.module";
 
 describe("Get question by slug (E2E)", () => {
   let app: INestApplication;
-  let jwt: JwtService;
   let studentFactory: StudentFactory;
   let questionFactory: QuestionFactory;
+  let jwt: JwtService;
 
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
@@ -23,9 +23,9 @@ describe("Get question by slug (E2E)", () => {
 
     app = moduleRef.createNestApplication();
 
-    jwt = moduleRef.get(JwtService);
     studentFactory = moduleRef.get(StudentFactory);
     questionFactory = moduleRef.get(QuestionFactory);
+    jwt = moduleRef.get(JwtService);
 
     await app.init();
   });
