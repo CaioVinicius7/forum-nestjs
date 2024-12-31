@@ -1,4 +1,4 @@
-import { MakeAnswer } from "test/factories/make-answer";
+import { makeAnswer } from "test/factories/make-answer";
 import { InMemoryAnswerAttachmentsRepository } from "test/repositories/in-memory-answer-attachments-repository";
 import { InMemoryAnswerCommentsRepository } from "test/repositories/in-memory-answer-comments-repository";
 import { InMemoryAnswersRepository } from "test/repositories/in-memory-answers-repository";
@@ -23,7 +23,7 @@ describe("Comment On Answer Use Case", () => {
   });
 
   it("Should be able to comment on answer", async () => {
-    const answer = MakeAnswer();
+    const answer = makeAnswer();
 
     await inMemoryAnswersRepository.create(answer);
 

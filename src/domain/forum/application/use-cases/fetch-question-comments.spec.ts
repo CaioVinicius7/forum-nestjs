@@ -1,4 +1,4 @@
-import { MakeQuestionComment } from "test/factories/make-question-comment";
+import { makeQuestionComment } from "test/factories/make-question-comment";
 import { InMemoryQuestionCommentsRepository } from "test/repositories/in-memory-question-comments-repository";
 
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
@@ -17,17 +17,17 @@ describe("Fetch Question Comments Use Case", () => {
 
   it("Should be able to fetch question comments", async () => {
     await inMemoryQuestionCommentsRepository.create(
-      MakeQuestionComment({
+      makeQuestionComment({
         questionId: new UniqueEntityID("question-1")
       })
     );
     await inMemoryQuestionCommentsRepository.create(
-      MakeQuestionComment({
+      makeQuestionComment({
         questionId: new UniqueEntityID("question-1")
       })
     );
     await inMemoryQuestionCommentsRepository.create(
-      MakeQuestionComment({
+      makeQuestionComment({
         questionId: new UniqueEntityID("question-1")
       })
     );
@@ -43,7 +43,7 @@ describe("Fetch Question Comments Use Case", () => {
   it("Should be able to fetch paginated question comments", async () => {
     for (let i = 1; i <= 22; i++) {
       await inMemoryQuestionCommentsRepository.create(
-        MakeQuestionComment({
+        makeQuestionComment({
           questionId: new UniqueEntityID("question-1")
         })
       );

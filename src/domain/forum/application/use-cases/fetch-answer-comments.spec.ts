@@ -1,4 +1,4 @@
-import { MakeAnswerComment } from "test/factories/make-answer-comment";
+import { makeAnswerComment } from "test/factories/make-answer-comment";
 import { InMemoryAnswerCommentsRepository } from "test/repositories/in-memory-answer-comments-repository";
 
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
@@ -16,17 +16,17 @@ describe("Fetch Answer Comments Use Case", () => {
 
   it("Should be able to fetch answer comments", async () => {
     await inMemoryAnswerCommentsRepository.create(
-      MakeAnswerComment({
+      makeAnswerComment({
         answerId: new UniqueEntityID("answer-1")
       })
     );
     await inMemoryAnswerCommentsRepository.create(
-      MakeAnswerComment({
+      makeAnswerComment({
         answerId: new UniqueEntityID("answer-1")
       })
     );
     await inMemoryAnswerCommentsRepository.create(
-      MakeAnswerComment({
+      makeAnswerComment({
         answerId: new UniqueEntityID("answer-1")
       })
     );
@@ -42,7 +42,7 @@ describe("Fetch Answer Comments Use Case", () => {
   it("Should be able to fetch paginated answer comments", async () => {
     for (let i = 1; i <= 22; i++) {
       await inMemoryAnswerCommentsRepository.create(
-        MakeAnswerComment({
+        makeAnswerComment({
           answerId: new UniqueEntityID("answer-1")
         })
       );

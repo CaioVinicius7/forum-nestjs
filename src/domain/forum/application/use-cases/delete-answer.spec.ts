@@ -1,4 +1,4 @@
-import { MakeAnswer } from "test/factories/make-answer";
+import { makeAnswer } from "test/factories/make-answer";
 import { makeAnswerAttachment } from "test/factories/make-answer-attachment";
 import { InMemoryAnswerAttachmentsRepository } from "test/repositories/in-memory-answer-attachments-repository";
 import { InMemoryAnswersRepository } from "test/repositories/in-memory-answers-repository";
@@ -23,7 +23,7 @@ describe("Delete Answer Use Case", () => {
   });
 
   it("Should be able to delete a answer", async () => {
-    const newAnswer = MakeAnswer(
+    const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityID("author-1")
       },
@@ -53,7 +53,7 @@ describe("Delete Answer Use Case", () => {
   });
 
   it("Should not be able to delete a answer from another user", async () => {
-    const newAnswer = MakeAnswer(
+    const newAnswer = makeAnswer(
       {
         authorId: new UniqueEntityID("author-1")
       },

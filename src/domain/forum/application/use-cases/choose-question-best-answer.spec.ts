@@ -1,5 +1,5 @@
-import { MakeAnswer } from "test/factories/make-answer";
-import { MakeQuestion } from "test/factories/make-question";
+import { makeAnswer } from "test/factories/make-answer";
+import { makeQuestion } from "test/factories/make-question";
 import { InMemoryAnswerAttachmentsRepository } from "test/repositories/in-memory-answer-attachments-repository";
 import { InMemoryAnswersRepository } from "test/repositories/in-memory-answers-repository";
 import { InMemoryQuestionAttachmentsRepository } from "test/repositories/in-memory-question-attachments-repository";
@@ -35,8 +35,8 @@ describe("Chose Question Best Answer Use Case", () => {
   });
 
   it("Should be able to choose the question best answer", async () => {
-    const question = MakeQuestion();
-    const answer = MakeAnswer({
+    const question = makeQuestion();
+    const answer = makeAnswer({
       questionId: question.id
     });
 
@@ -54,10 +54,10 @@ describe("Chose Question Best Answer Use Case", () => {
   });
 
   it("Should not be able to choose another user question best answer", async () => {
-    const question = MakeQuestion({
+    const question = makeQuestion({
       authorId: new UniqueEntityID("author-1")
     });
-    const answer = MakeAnswer({
+    const answer = makeAnswer({
       questionId: question.id
     });
 

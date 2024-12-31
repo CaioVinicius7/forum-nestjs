@@ -1,4 +1,4 @@
-import { MakeQuestion } from "test/factories/make-question";
+import { makeQuestion } from "test/factories/make-question";
 import { makeQuestionAttachment } from "test/factories/make-question-attachment";
 import { InMemoryQuestionAttachmentsRepository } from "test/repositories/in-memory-question-attachments-repository";
 import { InMemoryQuestionsRepository } from "test/repositories/in-memory-questions-repository";
@@ -26,7 +26,7 @@ describe("Edit Question Use Case", () => {
   });
 
   it("Should be able to edit a question", async () => {
-    const newQuestion = MakeQuestion(
+    const newQuestion = makeQuestion(
       {
         authorId: new UniqueEntityID("author-1")
       },
@@ -74,7 +74,7 @@ describe("Edit Question Use Case", () => {
   });
 
   it("Should not be able to edit a question from another user", async () => {
-    const newQuestion = MakeQuestion(
+    const newQuestion = makeQuestion(
       {
         authorId: new UniqueEntityID("author-1")
       },

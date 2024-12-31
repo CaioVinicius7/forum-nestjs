@@ -6,7 +6,7 @@ import {
   QuestionProps
 } from "@/domain/forum/enterprise/entities/question";
 
-export function MakeQuestion(
+export function makeQuestion(
   override: Partial<QuestionProps> = {},
   id?: UniqueEntityID
 ) {

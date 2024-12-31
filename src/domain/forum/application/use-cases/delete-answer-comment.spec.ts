@@ -1,4 +1,4 @@
-import { MakeAnswerComment } from "test/factories/make-answer-comment";
+import { makeAnswerComment } from "test/factories/make-answer-comment";
 import { InMemoryAnswerCommentsRepository } from "test/repositories/in-memory-answer-comments-repository";
 
 import { UniqueEntityID } from "@/core/entities/unique-entity-id";
@@ -16,7 +16,7 @@ describe("Delete Answer Comment Use Case", () => {
   });
 
   it("Should be able to delete a answer comment", async () => {
-    const answerComment = MakeAnswerComment();
+    const answerComment = makeAnswerComment();
 
     await inMemoryAnswerCommentsRepository.create(answerComment);
 
@@ -29,7 +29,7 @@ describe("Delete Answer Comment Use Case", () => {
   });
 
   it("Should not be able to delete another user answer comment", async () => {
-    const answerComment = MakeAnswerComment({
+    const answerComment = makeAnswerComment({
       authorId: new UniqueEntityID("author-1")
     });
 

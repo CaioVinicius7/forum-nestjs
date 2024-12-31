@@ -6,7 +6,7 @@ import {
   AnswerCommentProps
 } from "@/domain/forum/enterprise/entities/answer-comment";
 
-export function MakeAnswerComment(
+export function makeAnswerComment(
   override: Partial<AnswerCommentProps> = {},
   id?: UniqueEntityID
 ) {

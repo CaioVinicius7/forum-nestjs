@@ -1,4 +1,4 @@
-import { MakeQuestion } from "test/factories/make-question";
+import { makeQuestion } from "test/factories/make-question";
 import { InMemoryQuestionAttachmentsRepository } from "test/repositories/in-memory-question-attachments-repository";
 import { InMemoryQuestionCommentsRepository } from "test/repositories/in-memory-question-comments-repository";
 import { InMemoryQuestionsRepository } from "test/repositories/in-memory-questions-repository";
@@ -26,7 +26,7 @@ describe("Comment On Question Use Case", () => {
   });
 
   it("Should be able to comment on question", async () => {
-    const question = MakeQuestion();
+    const question = makeQuestion();
 
     await inMemoryQuestionsRepository.create(question);
 
