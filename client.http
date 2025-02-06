@@ -36,6 +36,8 @@ Authorization: Bearer {{authToken}}
   "content": "Conteúdo da pergunta"
 }
 
+###
+
 # @name edit_question
 PUT {{baseUrl}}/questions/{{questionId}} 
 Content-Type: application/json
@@ -46,6 +48,13 @@ Authorization: Bearer {{authToken}}
   "content": "Novo conteúdo"
 }
 
+
+###
+
+# @name delete_question
+DELETE  {{baseUrl}}/questions/{{questionId}} 
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
 
 ###
 
