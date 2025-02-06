@@ -1,5 +1,7 @@
 @baseUrl = http://localhost:3333
 @authToken = {{authenticate.response.body.accessToken}}
+@questionId = 55e94ccd-8d13-4877-a28b-6d597a56d3e5
+# Substituir pelo id da pergunta que deseja editar/deletar
 
 # @name create_account
 POST {{baseUrl}}/accounts
@@ -24,7 +26,7 @@ Content-Type: application/json
 
 ###
 
-# @name create_questions
+# @name create_question
 POST {{baseUrl}}/questions
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
@@ -33,6 +35,17 @@ Authorization: Bearer {{authToken}}
   "title": "Nova pergunta",
   "content": "Conteúdo da pergunta"
 }
+
+# @name edit_question
+PUT {{baseUrl}}/questions/{{questionId}} 
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "title": "Novo título",
+  "content": "Novo conteúdo"
+}
+
 
 ###
 
