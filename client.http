@@ -2,7 +2,7 @@
 @authToken = {{authenticate.response.body.accessToken}}
 @questionId = f0318815-0e05-4891-a585-447121ddba2f
 # Substituir pelo id da pergunta que deseja editar/deletar/responder
-@answerId = cd5e7872-6a8c-4874-bb33-339f92aa7d83
+@answerId = 381ef55c-c3f8-4b9f-9cf8-66819af3c3bb
 # Substituir pelo id da resposta que deseja editar/deletar
 
 # @name create_account
@@ -78,6 +78,13 @@ Authorization: Bearer {{authToken}}
 {
   "content": "Novo conteúdo"
 }
+
+###
+
+# @name delete_answer
+DELETE  {{baseUrl}}/answers/{{answerId}} 
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
 
 ###
 
