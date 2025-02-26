@@ -23,7 +23,7 @@ const bodyValidationPipe = new ZodValidationPipe(editAnswerBodySchema);
 
 type EditAnswerBodySchema = z.infer<typeof editAnswerBodySchema>;
 
-@Controller("/answer/:id")
+@Controller("/answers/:id")
 export class EditAnswerController {
   constructor(private readonly editAnswer: EditAnswerUseCase) {}
 
