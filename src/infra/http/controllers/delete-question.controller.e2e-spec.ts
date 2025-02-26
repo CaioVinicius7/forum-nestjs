@@ -61,8 +61,6 @@ describe("Delete question (E2E)", () => {
       }
     });
 
-    console.log("🚀 ~ test ~ questionOnDatabase:", questionOnDatabase);
-
     expect(questionOnDatabase).toBeNull();
   });
 });
