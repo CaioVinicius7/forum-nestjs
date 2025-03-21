@@ -97,3 +97,8 @@ Authorization: Bearer {{authToken}}
 GET {{baseUrl}}/questions/{{questionId}}/answers
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+# @name choose_question_best_answer
+PATCH {{baseUrl}}/answers/{{answerId}}/choose-as-best
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
