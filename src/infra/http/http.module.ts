@@ -7,6 +7,7 @@ import { DeleteAnswerUseCase } from "@/domain/forum/application/use-cases/delete
 import { DeleteQuestionUseCase } from "@/domain/forum/application/use-cases/delete-question";
 import { EditAnswerUseCase } from "@/domain/forum/application/use-cases/edit-answer";
 import { EditQuestionUseCase } from "@/domain/forum/application/use-cases/edit-question";
+import { FetchQuestionAnswersUseCase } from "@/domain/forum/application/use-cases/fetch-question-answers";
 import { FetchRecentQuestionUseCase } from "@/domain/forum/application/use-cases/fetch-recent-questions";
 import { GetQuestionBySlugUseCase } from "@/domain/forum/application/use-cases/get-question-by-slug";
 import { RegisterStudentUseCase } from "@/domain/forum/application/use-cases/register-student";
@@ -21,6 +22,7 @@ import { DeleteAnswerController } from "./controllers/delete-answer.controller";
 import { DeleteQuestionController } from "./controllers/delete-question.controller";
 import { EditAnswerController } from "./controllers/edit-answer.controller";
 import { EditQuestionController } from "./controllers/edit-question.controller";
+import { FetchQuestionsAnswersController } from "./controllers/fetch-question-answers.controller";
 import { FetchRecentQuestionsController } from "./controllers/fetch-recent-questions.controller";
 import { GetQuestionBySlugController } from "./controllers/get-question-by-slug.controller";
 
@@ -36,7 +38,8 @@ import { GetQuestionBySlugController } from "./controllers/get-question-by-slug.
     DeleteQuestionController,
     AnswerQuestionController,
     EditAnswerController,
-    DeleteAnswerController
+    DeleteAnswerController,
+    FetchQuestionsAnswersController
   ],
   providers: [
     CreateQuestionUseCase,
@@ -48,7 +51,8 @@ import { GetQuestionBySlugController } from "./controllers/get-question-by-slug.
     DeleteQuestionUseCase,
     AnswerQuestionUseCase,
     EditAnswerUseCase,
-    DeleteAnswerUseCase
+    DeleteAnswerUseCase,
+    FetchQuestionAnswersUseCase
   ]
 })
 export class HttpModule {}
