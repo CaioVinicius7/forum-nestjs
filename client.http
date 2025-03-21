@@ -93,12 +93,27 @@ GET {{baseUrl}}/questions?page=1
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
+###
+
 # @name fetch_question_best_answers
 GET {{baseUrl}}/questions/{{questionId}}/answers
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
+###
+
 # @name choose_question_best_answer
 PATCH {{baseUrl}}/answers/{{answerId}}/choose-as-best
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+###
+
+# @name comment_on_question
+POST {{baseUrl}}/questions/{{questionId}}/comments
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "content": "Conteúdo do comentário"
+}
